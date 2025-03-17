@@ -2,7 +2,12 @@
 
 const Header = () => {
   return (
-    <header>
+    <header style={{
+      backgroundColor: 'red',
+      padding: '10px',
+      fontFamily: 'Arial',
+      textAlign: 'center',
+      }}>
       <h1>My Header</h1>
     </header>
   )
