@@ -8,6 +8,7 @@ class Footer extends React.Component {
     return (
       <footer>
         <p className='footer-text'>My Footer</p>
+        <p>{this.props.message}</p>
       </footer>
     )
   }

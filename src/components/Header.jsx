@@ -1,3 +1,4 @@
+import Heading from './Heading';
 //CARA BARU
 
 const Header = () => {
@@ -8,7 +9,7 @@ const Header = () => {
       fontFamily: 'Arial',
       textAlign: 'center',
       }}>
-      <h1>My Header</h1>
+      <Heading> Ini Heading </Heading>
     </header>
   )
 }

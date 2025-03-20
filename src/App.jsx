@@ -8,8 +8,10 @@ function App() {
   return (
     <> 
       <Header/>
-      <TodoCard/>
-      <Footer/>
+      <TodoCard day="Monday" />
+      <TodoCard day="Tuesday" />
+      <TodoCard day="Wednesday" />
+      <Footer message="Hello World" />
     </>
   )
 }

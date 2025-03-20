@@ -1,6 +1,6 @@
 import { Button, Card, CardBody, CardFooter, CardHeader, Divider } from "@heroui/react";
 
-const TodoCard = () => {
+const TodoCard = (props) => {
   // return (
   //   <div>
   //     <h4>Monday Card</h4>
@@ -14,7 +14,7 @@ const TodoCard = () => {
 
   return (
     <Card className="max-w-[400px]">
-      <CardHeader className="font-bold text-lg">Monday</CardHeader>
+      <CardHeader className="font-bold text-lg">{props.day}</CardHeader>
       <Divider/>
       <CardBody>
         <ul className="list-decimal list-inside">
