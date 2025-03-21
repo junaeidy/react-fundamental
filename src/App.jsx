@@ -6,14 +6,14 @@ import { Button, Input } from '@heroui/react'
 import { useRef, useState } from 'react'
 
 function App() {
-  const inputRef = useRef();
 
+  const [wishListInput, setWishListInput] = useState('');
   const [wishLists, setWishLists] = useState([]);
 
   const addWishList = () => {
-    const wishListInputValue = inputRef.current.value;
 
-    setWishLists([...wishLists, wishListInputValue]);
+    setWishLists([...wishLists, wishListInput]);
+    setWishListInput('');
   } 
   return (
     <> 
@@ -26,8 +26,17 @@ function App() {
 
 
       <div className="flex items-center p-4 gap-4">
-        <Input ref={inputRef} label="Wishlist Item" color="secondary" />
-        <Button onPress={addWishList} color="primary">Add</Button>
+        <Input 
+          value={wishListInput} 
+          onChange={() => setWishListInput(event.target.value)} 
+          label="Wishlist Item" 
+          color="secondary" 
+        />
+        <Button 
+          onPress={addWishList} 
+          color="primary">
+            Add
+        </Button>
       </div>
 
       <ul className='list-decimal list-inside text-center text-2xl font-semibold'>
