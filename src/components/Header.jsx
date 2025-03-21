@@ -1,7 +1,32 @@
+import { useEffect, useState } from 'react';
 import Heading from './Heading';
+import { Button } from '@heroui/react';
 //CARA BARU
 
 const Header = () => {
+  const [message, setMessage] = useState('Hello World');
+
+  //ComponentDidMount
+  useEffect(() => {
+    alertUser();
+
+    return () => { //ComponentWillUnmount
+      alert('WILL UNMOUNT');
+    }
+  }, []); //ARRAY HARUS KOSONG
+
+  //ComponentDidUpdate
+  useEffect(() => {
+    alert('DID UPDATE');
+  }, [message]);
+
+  const changeMessage = () => {
+    setMessage('Hello React');
+  }
+  
+  const alertUser = () => {
+    alert('DID MOUNT');
+  }
   return (
     <header style={{
       backgroundColor: 'red',
@@ -10,6 +35,8 @@ const Header = () => {
       textAlign: 'center',
       }}>
       <Heading> Ini Heading </Heading>
+      <p>{message}</p>
+      <Button onClick={changeMessage}>Change Message</Button>
     </header>
   )
 }

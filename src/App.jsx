@@ -13,7 +13,7 @@ function App() {
       <TodoCard day="Tuesday" />
       <TodoCard day="Wednesday" /> */}
       <Counter></Counter>
-      <Footer message="Hello World" />
+      {/* <Footer message="Hello World" /> */}
     </>
   )
 }
