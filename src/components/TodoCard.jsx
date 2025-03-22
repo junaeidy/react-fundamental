@@ -1,4 +1,5 @@
 import { Button, Card, CardBody, CardFooter, CardHeader, Divider } from "@heroui/react";
+import PropTypes from "prop-types";
 
 const TodoCard = (props) => {
   // return (
@@ -14,7 +15,7 @@ const TodoCard = (props) => {
 
   return (
     <Card className="max-w-[400px]">
-      <CardHeader className="font-bold text-lg">{props.day}</CardHeader>
+      <CardHeader className="font-bold text-lg">{props.day} ({props.numberOfActivities})</CardHeader>
       <Divider/>
       <CardBody>
         <ul className="list-decimal list-inside">
@@ -29,6 +30,11 @@ const TodoCard = (props) => {
       </CardFooter>
     </Card>
   )
+}
+
+TodoCard.propTypes = {
+  day: PropTypes.string,
+  numberOfActivities: PropTypes.number,
 }
 
 export default TodoCard;
