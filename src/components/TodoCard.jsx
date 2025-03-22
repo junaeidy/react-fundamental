@@ -1,5 +1,7 @@
 import { Button, Card, CardBody, CardFooter, CardHeader, Divider } from "@heroui/react";
 import PropTypes from "prop-types";
+import { withAlert } from './../hoc/withAlert';
+import { withBackground } from "../hoc/withBackground";
 
 const TodoCard = (props) => {
   // return (
@@ -27,6 +29,7 @@ const TodoCard = (props) => {
       <Divider/>
       <CardFooter>
         <Button>Add</Button>
+        {props.propsTambahan}
       </CardFooter>
     </Card>
   )
@@ -37,4 +40,4 @@ TodoCard.propTypes = {
   numberOfActivities: PropTypes.number,
 }
 
-export default TodoCard;
+export default withBackground(withAlert(TodoCard));
