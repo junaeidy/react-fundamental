@@ -1,16 +1,24 @@
 {
-    "wishlist-items": [
-        {
-            "id": 1,
-            "name": "Coding"
-        },
-        {
-            "id": 2,
-            "name": "Kue"
-        },
-        {
-            "id": 3,
-            "name": "Healing"
-        }
-    ]
+  "wishlist-items": [
+    {
+      "id": "1",
+      "name": "Coding"
+    },
+    {
+      "id": "2",
+      "name": "Kue"
+    },
+    {
+      "id": "3",
+      "name": "Healing"
+    },
+    {
+      "id": "d9fc",
+      "name": "bakso"
+    },
+    {
+      "id": "3aa9",
+      "name": "mie ayam"
+    }
+  ]
 }

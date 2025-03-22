@@ -8,13 +8,15 @@ const WishListPage = () => {
   const [wishLists, setWishLists] = useState([]);
 
   const fetchWishLists = async () => {
-    const response = await axiosInstance.get('wishlist-items');
+    const response = await axiosInstance.get('/wishlist-items');
     setWishLists(response.data);
   }
 
-  const addWishList = () => {
-
-    setWishLists([...wishLists, wishListInput]);
+  const addWishList = async () => {
+    await axiosInstance.post('/wishlist-items', { 
+      name: wishListInput 
+    });
+    fetchWishLists();
     setWishListInput('');
   } 
 
