@@ -1,16 +1,26 @@
 import { Button, Input } from '@heroui/react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { axiosInstance } from '../lib/axios';
 
-function WishListPage() {
+const WishListPage = () => {
 
   const [wishListInput, setWishListInput] = useState('');
   const [wishLists, setWishLists] = useState([]);
+
+  const fetchWishLists = async () => {
+    const response = await axiosInstance.get('wishlist-items');
+    setWishLists(response.data);
+  }
 
   const addWishList = () => {
 
     setWishLists([...wishLists, wishListInput]);
     setWishListInput('');
   } 
+
+  useEffect(() => {
+    fetchWishLists();
+  }, []);
   return (
     <> 
       <div className="flex items-center p-4 gap-4">
@@ -29,7 +39,7 @@ function WishListPage() {
 
       <ul className='list-decimal list-inside text-center text-2xl font-semibold'>
         {wishLists.map((item) => {
-          return <li>{item}</li>;
+          return <li>{item.name}</li>;
         })}
       </ul>
     </>

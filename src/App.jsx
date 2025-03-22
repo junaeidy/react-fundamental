@@ -1,11 +1,12 @@
 import SignUpPage from "./pages/SignUpPage"
+import WishListPage from './pages/WishListPage';
 
 
 function App() {
 
   return (
     <> 
-      <SignUpPage />
+      <WishListPage />
     </>
   )
 }
