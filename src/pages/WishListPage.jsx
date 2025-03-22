@@ -1,6 +1,7 @@
 import { Button, Input } from '@heroui/react'
 import { useState, useEffect } from 'react'
 import { axiosInstance } from '../lib/axios';
+import { toast } from 'sonner';
 
 const WishListPage = () => {
 
@@ -8,16 +9,27 @@ const WishListPage = () => {
   const [wishLists, setWishLists] = useState([]);
 
   const fetchWishLists = async () => {
-    const response = await axiosInstance.get('/wishlist-items');
-    setWishLists(response.data);
+    try {
+      const response = await axiosInstance.get('/wishlist-items');
+      setWishLists(response.data);
+    } catch (error) {
+      toast.error("Something went wrong!");
+    }
   }
 
   const addWishList = async () => {
-    await axiosInstance.post('/wishlist-items', { 
-      name: wishListInput 
-    });
-    fetchWishLists();
-    setWishListInput('');
+    try {
+      await axiosInstance.post('/wishlist-items', { 
+        name: wishListInput 
+      });
+      fetchWishLists();
+      setWishListInput('');
+
+      toast.success("Wishlist item added!");
+      
+    } catch (error) {
+      toast.error("Something went wrong!");
+    }
   } 
 
   useEffect(() => {
