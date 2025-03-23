@@ -1,26 +1,22 @@
-import SignUpPage from "./pages/SignUpPage"
 import WishListPage from './pages/WishListPage';
-import { Toaster } from "sonner";
-import TodoCard from './components/TodoCard';
-import Footer from "./components/Footer";
+import { Routes, Route } from 'react-router-dom';
+import SignUpPage from "./pages/SignUpPage"
+import Header from './components/Header';
+import ProfilePage from './pages/ProfilePage';
 
 function App() {
 
-  // return (
-  //   <> 
-  //     <Toaster position="top-right" />
-  //     <WishListPage />
-  //   </>
-  // )
-
   return (
-    <>
-      <main className="p-4">
-        <TodoCard day="Monday" numberOfActivities={5} />
-        <Footer />
-      </main>
+    <> 
+      <Routes>
+        <Route element={<WishListPage />} path='/wishlist' />
+        <Route element={<SignUpPage />} path='/sign-up' />
+        <Route element={<Header />} path='/' />
+        <Route element={<ProfilePage />} path='/profile/:username' />
+      </Routes>
     </>
   )
+
 }
 
 export default App

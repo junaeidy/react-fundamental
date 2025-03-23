@@ -2,6 +2,7 @@ import { Button, Input } from '@heroui/react'
 import { useState, useEffect } from 'react'
 import { axiosInstance } from '../lib/axios';
 import { toast } from 'sonner';
+import { Link } from 'react-router-dom';
 
 const WishListPage = () => {
 
@@ -56,6 +57,8 @@ const WishListPage = () => {
           return <li>{item.name}</li>;
         })}
       </ul>
+
+      <Link to='/sign-up'>Sign Up now!</Link>
     </>
   )
 }

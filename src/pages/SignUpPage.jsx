@@ -1,8 +1,9 @@
 import React from 'react'
-import { Button, Card, CardBody, CardHeader, Divider, Input } from '@heroui/react';
+import { Button, Card, CardBody, CardFooter, CardHeader, Divider, Input } from '@heroui/react';
 import { Controller, useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { Link } from 'react-router-dom';
 
 const signUpFormSchema = z.object({
   email: z.string().email("Format email belum sesuai"),
@@ -55,6 +56,9 @@ const registerUser = (data) => {
                   <Button type='submit' color='primary'>Sign Up</Button>
                 </form>
             </CardBody>
+            <CardFooter>
+              <Link to='/'>To Wishlist Page</Link>
+            </CardFooter>
         </Card>
     </div>
   )
