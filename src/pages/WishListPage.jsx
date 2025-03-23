@@ -3,8 +3,12 @@ import { useState, useEffect } from 'react'
 import { axiosInstance } from '../lib/axios';
 import { toast } from 'sonner';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const WishListPage = () => {
+
+  const selectorCounter = useSelector(state => state.counter);
+  const selectorMessage = useSelector(state => state.message);
 
   const [wishListInput, setWishListInput] = useState('');
   const [wishLists, setWishLists] = useState([]);
@@ -59,6 +63,12 @@ const WishListPage = () => {
       </ul>
 
       <Link to='/sign-up'>Sign Up now!</Link>
+      <p className='text-2xl font-semibold text-center'>
+        Counter Value: {selectorCounter.count}
+      </p>
+      <p className='text-2xl font-semibold text-center'>
+        Message : {selectorMessage}
+      </p>
     </>
   )
 }
