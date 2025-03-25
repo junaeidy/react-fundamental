@@ -63,6 +63,8 @@ const WishListPage = () => {
       </ul>
 
       <Link to='/sign-up'>Sign Up now!</Link>
+      <br />
+      <Link to='/'>Back to Home</Link>
       <p className='text-2xl font-semibold text-center'>
         Counter Value: {selectorCounter.count}
       </p>
