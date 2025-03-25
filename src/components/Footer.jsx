@@ -7,7 +7,7 @@ import { withBackground } from '../hoc/withBackground';
 
 class Footer extends React.Component {
   state = {
-    message: 'Hello World'
+    message: 'Hello React'
   }
 
   // componentDidMount() {
@@ -30,10 +30,10 @@ class Footer extends React.Component {
     return (
       <footer>
         <p className='footer-text'>My Footer</p>
-        <p>{this.props.message}</p>
+        <p data-testid="props-message">{this.props.message}</p>
         <p>{this.props.propsTambahan}</p>
-        <p>{this.state.message}</p>
-        <Button onClick={this.changeMessage}>Change Message</Button>
+        <p data-testid="state-message">{this.state.message}</p>
+        <Button data-testid="button-footer" onClick={this.changeMessage}>Change Message</Button>
       </footer>
     )
   }

@@ -2,11 +2,11 @@ import { Button, Divider, Input } from "@heroui/react";
 import React, { useState, useMemo } from "react";
 import {useDispatch, useSelector , connect} from 'react-redux'
 
-const slowDoubleNumber = (number) => {
-    for (let i = 0; i < 1000000000; i++) {}
+// const slowDoubleNumber = (number) => {
+//     for (let i = 0; i < 1000000000; i++) {}
 
-    return number * 2;
-}
+//     return number * 2;
+// }
 
 //FUNCTIONAL COMPONENT
 const Counter = () => {
@@ -34,7 +34,7 @@ const Counter = () => {
         dispatch({ type: 'SET', payload: inputCounter });
     };
 
-    const slowDoubleNumberResult = useMemo(() => slowDoubleNumber(count), [count]); 
+    // const slowDoubleNumberResult = useMemo(() => slowDoubleNumber(count), [count]); 
     return (
         <div>
             <h1 className="text-center font-semibold text-2xl">Local State Counter</h1>
@@ -43,7 +43,7 @@ const Counter = () => {
                 <span className="text-3xl font-semibold">{count}</span>
                 <Button onClick={incrementCounter} color="success">Add</Button>
             </div>
-                <p className="text-2xl font-semibold text-center">{slowDoubleNumberResult}</p>
+                {/* <p className="text-2xl font-semibold text-center">{slowDoubleNumberResult}</p> */}
             <Divider />
 
             <h1 className="font-semibold text-center text-2xl">Global State Counter</h1>

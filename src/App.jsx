@@ -2,11 +2,9 @@ import {lazy, Suspense} from 'react';
 import WishListPage from './pages/WishListPage';
 import { Routes, Route } from 'react-router-dom';
 import SignUpPage from "./pages/SignUpPage"
-import Header from './components/Header';
-// import Counter from './components/Counter';
 import ProfilePage from './pages/ProfilePage';
 
-const Counter = lazy(() => import('./components/Counter'));
+const CounterPage = lazy(() => import('./pages/CounterPage'));
 
 function App() {
 
@@ -17,7 +15,7 @@ function App() {
         <Route element={<SignUpPage />} path='/sign-up' />
         <Route element={
           <Suspense fallback={<div>Loading...</div>}>
-            <Counter/>
+            <CounterPage/>
           </Suspense>
         } path='/' />
         <Route element={<ProfilePage />} path='/profile/:username' />
