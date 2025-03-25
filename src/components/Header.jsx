@@ -7,26 +7,26 @@ const Header = () => {
   const [message, setMessage] = useState('Hello World');
 
   //ComponentDidMount
-  useEffect(() => {
-    alertUser();
+  // useEffect(() => {
+  //   alertUser();
 
-    return () => { //ComponentWillUnmount
-      alert('WILL UNMOUNT');
-    }
-  }, []); //ARRAY HARUS KOSONG
+  //   return () => { //ComponentWillUnmount
+  //     alert('WILL UNMOUNT');
+  //   }
+  // }, []); //ARRAY HARUS KOSONG
 
-  //ComponentDidUpdate
-  useEffect(() => {
-    alert('DID UPDATE');
-  }, [message]);
+  // //ComponentDidUpdate
+  // useEffect(() => {
+  //   alert('DID UPDATE');
+  // }, [message]);
 
-  const changeMessage = () => {
-    setMessage('Hello React');
-  }
+  // const changeMessage = () => {
+  //   setMessage('Hello React');
+  // }
   
-  const alertUser = () => {
-    alert('DID MOUNT');
-  }
+  // const alertUser = () => {
+  //   alert('DID MOUNT');
+  // }
   return (
     <header style={{
       backgroundColor: 'red',
@@ -34,9 +34,9 @@ const Header = () => {
       fontFamily: 'Arial',
       textAlign: 'center',
       }}>
-      <Heading> Ini Heading </Heading>
-      <p>{message}</p>
-      <Button onClick={changeMessage}>Change Message</Button>
+      <Heading />
+      {/* <p>{message}</p>
+      <Button onClick={changeMessage}>Change Message</Button> */}
     </header>
   )
 }
